@@ -1,6 +1,5 @@
 const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const workboxPlugin = require("workbox-webpack-plugin");
 const path = require("path");
@@ -9,29 +8,15 @@ var CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   devtool: "source-map",
-  devServer: {
-    contentBase: commonPaths.outputPath,
-    port: 3000,
-    host: "0.0.0.0",
-    useLocalIp: true,
-    compress: true
-  },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                importLoaders: 1,
-                minimize: true
-              }
-            }
-          ]
-        })
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
       }
     ]
   },
@@ -39,14 +24,14 @@ module.exports = {
     new CleanWebpackPlugin(["dist"], {
       root: commonPaths.root
     }),
-    new ExtractTextPlugin("styles.css"),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
-    }),
-    new UglifyJSPlugin({
-      test: /\.ts$/
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new workboxPlugin({
