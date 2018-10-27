@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 workboxPlugin = require('workbox-webpack-plugin');
 const path = require("path");
@@ -17,7 +19,24 @@ module.exports = {
           "css-loader",
           "sass-loader",
         ],
-      }
+      },
+      {
+        test: /.js$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: /(node_modules|dist|build-utils|webpack.config.js)/
+      },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
   plugins: [

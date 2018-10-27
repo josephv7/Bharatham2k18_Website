@@ -33,6 +33,13 @@ const config = {
             }
           },
         ],
+      },
+      {
+        test: /.js$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: /(node_modules|dist|build-utils|webpack.config.js)/
       }
     ]
   },
