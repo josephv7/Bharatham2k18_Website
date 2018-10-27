@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const workboxPlugin = require("workbox-webpack-plugin");
+workboxPlugin = require('workbox-webpack-plugin');
 const path = require("path");
 const commonPaths = require("./common-paths");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -34,7 +34,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new workboxPlugin({
+    new workboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
       swDest: path.join(commonPaths.outputPath, "sw.js")
