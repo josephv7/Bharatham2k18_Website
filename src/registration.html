@@ -16,6 +16,55 @@
   <button type="logout" id="logout-button">Logout</button>
 
 
+ 
+
+
+  <div class="container">
+    
+  
+
+        <form class="gform" method="POST" data-email="example@email.net"
+              action="https://script.google.com/macros/s/AKfycbxG0Sz5aMeKUKX6UDJiykSyvvfZ-r8gNC88Lx6MeeOsiFN3o7GO/exec">
+           <div class="form-elements">
+            <ul class="flex-outer">
+                <li>
+                    <label for="full_name" style="font-family: 'Armata', sans-serif;">Full Name *</label>
+                    <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Armata', sans-serif;"/>
+                </li>
+                <li>
+                    <label for="designation" style="font-family: 'Armata', sans-serif;"> Designation *</label>
+                    <input id="designation" name="designation" required placeholder="eg: Freelancer"style="font-family: 'Armata', sans-serif;" />
+                </li>
+                
+                <li>
+                    <label for="contact_no"style="font-family: 'Armata', sans-serif;">Contact Number *</label>
+                    <input id="contact_no" name="contact_no" type="number" value=""
+                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Armata', sans-serif;"/>
+                    <!--TODO : type for number-->
+                </li>
+            
+                <li>
+                    <button type="submit">Submit</button>
+                </li>
+            </ul>
+           </div>
+    
+            <div class="thankyou_message" style="display:none;">
+            <center><h2 style="font-family: 'Armata', sans-serif;font-weight: 300;">Thanks for contacting us!
+                We will get back to you soon!</h2></center>
+    </div>
+        </form>
+    
+    </div>
+    
+    <script data-cfasync="false" type="text/javascript"
+            src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    
+
+
+
+
+
 
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
