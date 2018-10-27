@@ -9,24 +9,15 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   <!-- Add http://ogp.me/ tags when ready -->
-  <title>Title of Document</title>
+  <title>Registartion Page</title>
 </head>
 <body>
-  <h1>Login Page</h1>
+  <h1>Registration Page</h1>
+  <button type="logout" id="logout-button">Logout</button>
 
 
-  <div class="error">
-        <p id="errorText"></p>
-    </div>
-<form class="form">
-				<input type="email" id="username" placeholder="Username">
-				<input type="password" id="password" placeholder="Password">
-				<br><br>
-				<button type="submit" id="login-button">Login</button>
-</form>
 
-
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
 <script>
@@ -45,30 +36,34 @@
   firebase.initializeApp(config);
 
 
-$("#login-button").click(function(event){
+
+
+
+
+
+$("#logout-button").click(function(event){
 			 event.preventDefault();
-			 var email = document.getElementById('username').value;
-	         var password = document.getElementById('password').value;
-	  		 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-			  // Handle Errors here.
-			  var errorCode = error.code;
-			  var errorMessage = error.message;
-			  $(".error").show(2000);
-			  $('#errorText').text(errorMessage);
-			});
+             firebase.auth().signOut().then(function() {
+                // Sign-out successful.
+             window.location.href = "login.html"; 
+             }).catch(function(error) {
+               // An error happened.
+                });
 		});
-		firebase.auth().onAuthStateChanged(function(user) {
-			if (user) {
-		    	// User is signed in
-		    	window.location.href = "registration.html"; 
-			} else {
-		    // No user is signed in.
-		    console.log("No One");
-		  	}
-		});
+		// firebase.auth().onAuthStateChanged(function(user) {
+		// 	if (user) {
+		//     	// User is signed in
+		//     	window.location.href = "registration.html"; 
+		// 	} else {
+		//     // No user is signed in.
+		//     console.log("No One");
+		//   	}
+		// });
 
 
-</script>
+  
+
+  </script>
 
 </body>
 </html>
