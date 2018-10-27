@@ -9,7 +9,9 @@ const config = {
     overlay: true,
     hot: true,
     useLocalIp: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: 'src/',
+    watchContentBase: true,
   },
   module: {
     rules: [
