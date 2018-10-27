@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
