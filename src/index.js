@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 function init() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

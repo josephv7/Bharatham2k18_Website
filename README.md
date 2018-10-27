@@ -12,10 +12,15 @@ You can replace these with their `yarn` counterparts, if you prefer.
 
 ## Features
 * [SCSS Loader](https://sass-lang.com/)
+
   Use SCSS for your CSS files.
 
 * [Prettier](https://prettier.io/)
+
   Add prettier to autoformat your files.
 
 * [Babel](https://babeljs.io/)
+
   Convert your javascript files to fit all browsers.
+
+* All files added to public folder will be copied to dist
