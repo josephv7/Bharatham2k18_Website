@@ -14,18 +14,11 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
+        test: /\.scss$/,
         use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1
-            }
-          }
+          "style-loader",
+          "css-loader",
+          "sass-loader",
         ]
       }
     ]
