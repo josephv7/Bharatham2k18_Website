@@ -3,7 +3,9 @@ const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: ["@babel/polyfill", "./src/index.js"],
+  entry: {
+    'main': ''
+  },
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
