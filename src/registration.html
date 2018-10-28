@@ -16,7 +16,7 @@
           background: black;
       }
   </style>
-  <link rel="stylesheet" href="./css/registration.scss">
+  <!-- <link rel="stylesheet" href="./css/registration.scss"> -->
   <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
 </head>
 <body>
@@ -40,16 +40,36 @@
                     <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Armata', sans-serif;"/>
                 </li>
                 <li>
-                    <label for="designation" style="font-family: 'Armata', sans-serif;"> Designation *</label>
-                    <input id="designation" name="designation" required placeholder="eg: Freelancer"style="font-family: 'Armata', sans-serif;" />
+                    <label for="house" style="font-family: 'Armata', sans-serif;"> House *</label>
+                    <input id="house" name="house" required placeholder="House"style="font-family: 'Armata', sans-serif;" />
                 </li>
-                
+
                 <li>
+                    <label for="sem_class" style="font-family: 'Armata', sans-serif;"> Class *</label>
+                    <input id="sem_class" name="sem_class" required placeholder="eg: S7 CS Beta"style="font-family: 'Armata', sans-serif;" />
+                </li>
+
+
+                <li>
+                    <label for="event_id"style="font-family: 'Armata', sans-serif;">Contact Number *</label>
+                    <select id="event_id" name="event_id">
+                        <option value="volvo" style="font-family: 'Armata', sans-serif;">Volvodadasdsdadasdssad</option>
+                        <option value="saab" style="font-family: 'Armata', sans-serif;">Saab</option>
+                        <option value="fiat" style="font-family: 'Armata', sans-serif;">Fiat</option>
+                        <option value="audi" style="font-family: 'Armata', sans-serif;">Audi</option>
+                    </select>
+                    <!-- <input id="event_id" name="event_id" type="number" value=""
+                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Armata', sans-serif;"/>
+                    TODO : type for number -->
+                </li>
+
+                
+                <!-- <li>
                     <label for="contact_no"style="font-family: 'Armata', sans-serif;">Contact Number *</label>
                     <input id="contact_no" name="contact_no" type="number" value=""
                           maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Armata', sans-serif;"/>
-                    <!--TODO : type for number-->
-                </li>
+    
+                </li> -->
             
                 <li>
                     <button type="submit">Submit</button>
