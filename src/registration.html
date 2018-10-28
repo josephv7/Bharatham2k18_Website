@@ -129,14 +129,39 @@
             });
         });
 
+        var house, uid;
+        firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+                uid = firebase.auth().currentUser.uid;
+                console.log(uid);
+                console.log('here2');
+                
+                firebase.database().ref().child('reg_captains').once("value",function(snapshot){
+                    console.log('here');
+                    var house = snapshot.child(uid).val();
+                    console.log(house);
+                })
+		    	
+			} else {
+		    // No user is signed in.
+		    
+		  	}
+		});
 
-        var ref = firebase.database.ref();
-        var user = firebase.auth().currentUser;
-        var uid = user.uid;
-        ref.child('reg_captains').child(uid).on("value", function(snapshot) {
-            var house = snapshot.val();
-            console.log(val);
-        }
+        // var uid = firebase.auth().currentUser.uid;
+        // console.log(uid);
+        // var ref = firebase.database().ref();
+        // var user = firebase.auth().currentUser;
+        // if(user){
+        //     // uid = user.uid;
+        // }else{
+        //     //nothing
+        // }
+        
+        // ref.child('reg_captains').on("value", function(snapshot) {
+        //     var house = snapshot.child(uid).val();
+            // console.log(house);
+        // });
 
 
 
@@ -146,15 +171,7 @@
 
 
         
-		// firebase.auth().onAuthStateChanged(function(user) {
-		// 	if (user) {
-		//     	// User is signed in
-		//     	window.location.href = "registration.html"; 
-		// 	} else {
-		//     // No user is signed in.
-		//     console.log("No One");
-		//   	}
-		// });
+		
 
 
 
