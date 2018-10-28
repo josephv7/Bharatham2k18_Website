@@ -1,16 +1,21 @@
+const path = require("path");
 const commonPaths = require("./common-paths");
 const webpack = require("webpack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: ["@babel/polyfill", "./src/index.js"],
+  entry: {
+    "main": "./src/index.js",
+    "registration": "./src/js/registration.js",
+    "login": "./src/js/login.js",
+  },
   output: {
     filename: "[hash].bundle.js",
     path: commonPaths.outputPath,
     publicPath: "/"
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".js"]
   },
   module: {
     rules: [
@@ -41,8 +46,20 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new htmlWebpackPlugin({
-      template: "src/index.html"
-    })
+      filename: "index.html",
+      template: "./src/index.html",
+      chunks: ["main"],
+    }),
+    new htmlWebpackPlugin({
+      filename: "login.html",
+      template: "./src/login.html",
+      chunks: ["login"],
+    }),
+    new htmlWebpackPlugin({
+      filename: "registration.html",
+      template: "./src/registration.html",
+      chunks: ["registration"],
+    }),
   ]
 };
 

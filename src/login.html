@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,78 +11,72 @@
   <meta name="author" content="">
   <!-- Add http://ogp.me/ tags when ready -->
   <title>Title of Document</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
-  
-
 </head>
+
 <body>
-  
-
-
-    <div class="wrapper">
-        <div class="container">
-          <h1>LOGIN</h1>
-          <br><br>
-          <div class="error">
-            <p id="errorText"></p>
-          </div>
-          <form class="form">
-            <input type="email" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <br><br>
-            <button type="submit" id="login-button">Login</button>
-          </form>
-        </div>
+  <div class="wrapper">
+    <div class="container">
+      <h1>LOGIN</h1>
+      <br><br>
+      <div class="error">
+        <p id="errorText"></p>
       </div>
-
-
-
-
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
-<script>
+      <form class="form">
+        <input type="email" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <br><br>
+        <button type="submit" id="login-button">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script>
     // var firebase = require("firebase/app");
     // var auth = require("firebase/auth");
     // TODO require not working
-  
-  var config = {
-    apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
-    authDomain: "bharatham2k18-903ae.firebaseapp.com",
-    databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
-    projectId: "bharatham2k18-903ae",
-    storageBucket: "bharatham2k18-903ae.appspot.com",
-    messagingSenderId: "46039964633"
-  };
-  firebase.initializeApp(config);
+
+    var config = {
+      apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
+      authDomain: "bharatham2k18-903ae.firebaseapp.com",
+      databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
+      projectId: "bharatham2k18-903ae",
+      storageBucket: "bharatham2k18-903ae.appspot.com",
+      messagingSenderId: "46039964633"
+    };
+    firebase.initializeApp(config);
 
 
-$("#login-button").click(function(event){
-			 event.preventDefault();
-			 var email = document.getElementById('username').value;
-	         var password = document.getElementById('password').value;
-	  		 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-			  // Handle Errors here.
-			  var errorCode = error.code;
-			  var errorMessage = error.message;
-			  $(".error").show(2000);
-			  $('#errorText').text(errorMessage);
-			});
-		});
-		firebase.auth().onAuthStateChanged(function(user) {
-			if (user) {
-		    	// User is signed in
-		    	window.location.href = "registration.html"; 
-			} else {
-		    // No user is signed in.
-		    console.log("No One");
-		  	}
-		});
+    $("#login-button").click(function (event) {
+      event.preventDefault();
+      var email = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        $(".error").show(2000);
+        $('#errorText').text(errorMessage);
+      });
+    });
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in
+        window.location.href = "registration.html";
+      } else {
+        // No user is signed in.
+        console.log("No One");
+      }
+    });
 
 
-</script>
+  </script>
 
 </body>
+
 </html>
