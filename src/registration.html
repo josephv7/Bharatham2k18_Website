@@ -16,13 +16,15 @@
       body{
           background: black;
       }
+      /* font-family: 'Titillium Web', bold; */
   </style>
   <!-- <link rel="stylesheet" href="./css/registration.scss"> -->
-  <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
 <body>
-  <h1>Registration Page</h1>
-  <button type="logout" id="logout-button">Logout</button>
+  <h1 style="font-family: 'Titillium Web', bold;">Registration Page</h1>
+  <button type="logout" id="logout-button" class="cus_font">Logout</button>
 
 
  
@@ -37,38 +39,48 @@
            <div class="form-elements">
             <ul class="flex-outer">
                 <li>
-                    <label for="full_name" style="font-family: 'Armata', sans-serif;">Full Name *</label>
-                    <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Armata', sans-serif;"/>
+                    <label for="full_name" style="font-family: 'Titillium Web', bold;">Full Name *</label>
+                    <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Titillium Web', bold;"/>
                 </li>
                 <li>
-                    <label for="house" style="font-family: 'Armata', sans-serif;"> House *</label>
-                    <input id="house" name="house" required placeholder="House"style="font-family: 'Armata', sans-serif;" />
+                    <label for="house" style="font-family: 'Titillium Web', sans-serif;"> House *</label>
+                    <input id="house" name="house" required placeholder="House"style="font-family: 'Titillium Web', bold;" />
                 </li>
 
                 <li>
-                    <label for="sem_class" style="font-family: 'Armata', sans-serif;"> Class *</label>
-                    <input id="sem_class" name="sem_class" required placeholder="eg: S7 CS Beta"style="font-family: 'Armata', sans-serif;" />
+                    <label for="sem_class" style="font-family: 'Titillium Web', bold;"> Class *</label>
+                    <input id="sem_class" name="sem_class" required placeholder="eg: S7 CS Beta"style="font-family: 'Titillium Web', bold;" />
                 </li>
 
 
                 <li>
-                    <label for="event_id"style="font-family: 'Armata', sans-serif;">Contact Number *</label>
+                    <label for="event_id"style="font-family: 'Titillium Web', bold;">Event *</label>
                     <select id="event_id" name="event_id">
-                        <option value="volvo" style="font-family: 'Armata', sans-serif;">Volvodadasdsdadasdssad</option>
-                        <option value="saab" style="font-family: 'Armata', sans-serif;">Saab</option>
-                        <option value="fiat" style="font-family: 'Armata', sans-serif;">Fiat</option>
-                        <option value="audi" style="font-family: 'Armata', sans-serif;">Audi</option>
+                        <option value="LE1" style="font-family: 'Titillium Web', bold;">event here</option>
+                        <option value="LE2" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE3" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE4" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE5" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE6" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE7" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE8" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE9" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE10" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE11" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE12" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE13" style="font-family: 'Titillium Web', bold;"></option>
+                        <option value="LE14" style="font-family: 'Titillium Web', bold;"></option>
                     </select>
                     <!-- <input id="event_id" name="event_id" type="number" value=""
-                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Armata', sans-serif;"/>
+                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Titillium Web', bold;"/>
                     TODO : type for number -->
                 </li>
 
                 
                 <!-- <li>
-                    <label for="contact_no"style="font-family: 'Armata', sans-serif;">Contact Number *</label>
+                    <label for="contact_no"style="font-family: 'Titillium Web', bold;">Contact Number *</label>
                     <input id="contact_no" name="contact_no" type="number" value=""
-                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Armata', sans-serif;"/>
+                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Titillium Web', bold;"/>
     
                 </li> -->
             
@@ -79,7 +91,7 @@
            </div>
     
             <div class="thankyou_message" style="display:none;">
-            <center><h2 style="font-family: 'Armata', sans-serif;font-weight: 300;">Thanks for contacting us!
+            <center><h2 style="font-family: 'Titillium Web', bold;font-weight: 300;">Thanks for contacting us!
                 We will get back to you soon!</h2></center>
     </div>
         </form>
