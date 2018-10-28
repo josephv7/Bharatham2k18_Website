@@ -47,7 +47,7 @@
                     </li>
                     <li>
                         <label for="house" style="font-family: 'Titillium Web', sans-serif;"> House *</label>
-                        <input id="house" name="house" required placeholder="House" style="font-family: 'Titillium Web', bold; color: black;" />
+                        <input id="house" name="house" required placeholder="House" style="font-family: 'Titillium Web', bold; color: black;" disabled/>
                     </li>
 
                     <li>
@@ -77,6 +77,7 @@
                         </select>
 
                     </li>
+                   
                     <div class="col-md-3 text-center">
                         <button type="submit" class="btn btn-lg btn-success">Submit</button>
                     </div>
@@ -129,17 +130,20 @@
             });
         });
 
-        var house, uid;
+        var house, uid, email;
         firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
                 uid = firebase.auth().currentUser.uid;
+                email = firebase.auth().currentUser.email;
                 console.log(uid);
+                console.log(email);
                 console.log('here2');
                 
                 firebase.database().ref().child('reg_captains').once("value",function(snapshot){
                     console.log('here');
                     var house = snapshot.child(uid).val();
                     console.log(house);
+                    document.getElementById('house').value = house;
                 })
 		    	
 			} else {
