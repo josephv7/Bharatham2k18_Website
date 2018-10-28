@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta content=#000000 name=theme-color>
+<meta content=#000000 name=msapplication-navbutton-color>
+<meta content=#000000 name=apple-mobile-web-app-status-bar-style>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="UTF-8">
-        <title>Login</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
-        <meta name="robots" content="index, follow">
-        <link rel="icon"  type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
-        
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
+
   <style>
     @import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
-    .cus_font{
+    .cus_font {
       font-family: 'Titillium Web', sans-serif;
       font-size: 2.5rem;
     }
   </style>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
@@ -30,24 +33,26 @@
   <div class="wrapper">
     <div class="container">
       <h1 class="cus_font">LOGIN</h1>
-      <br><br>
+      <br>
+      <br>
       <div class="error">
         <p id="errorText"></p>
       </div>
       <form class="form">
         <input type="email" id="username" placeholder="Email Id">
         <input type="password" id="password" placeholder="Password">
-        <br><br>
+        <br>
+        <br>
         <button type="submit" id="login-button" class="cus_font">Login</button>
       </form>
     </div>
   </div>
-  
+
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
   <script>
-    
+
     var config = {
       apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
       authDomain: "bharatham2k18-903ae.firebaseapp.com",
@@ -58,7 +63,7 @@
     };
     firebase.initializeApp(config);
 
-   
+
     $("#login-button").click(function (event) {
       event.preventDefault();
       var email = document.getElementById('username').value;
@@ -72,10 +77,10 @@
     });
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        
+
         window.location.href = "registration.html";
       } else {
-        
+
         console.log("Signed Out!");
       }
     });
