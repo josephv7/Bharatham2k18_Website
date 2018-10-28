@@ -14,7 +14,9 @@
   <!-- Add http://ogp.me/ tags when ready -->
   <title>Landing Page</title>
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
     /* Links */
+
     a,
     a:focus,
     a:hover {
@@ -44,6 +46,7 @@
       background-color: black;
       font-family: 'Play', sans-serif;
       margin: 0;
+
     }
 
     body {
@@ -144,6 +147,15 @@
       padding: 10px 20px;
       font-weight: bold;
     }
+    .cover-heading{
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 8rem;
+    }
+
+    .cus_font{
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 2.5rem;
+    }
 
 
     /*
@@ -161,32 +173,33 @@
  * Affix and center
  */
 
-    
+    /* Pull out the header and footer */
 
-      /* Pull out the header and footer */
-      .masthead {
-        position: fixed;
-        top: 0;
-      }
+    .masthead {
+      position: fixed;
+      top: 3em;
+    }
 
-      .mastfoot {
-        position: fixed;
-        bottom: 0;
-      }
+    .mastfoot {
+      position: fixed;
+      bottom: 2em;
+    }
 
-      /* Start the vertical centering */
-      .site-wrapper-inner {
-        vertical-align: middle;
-      }
+    /* Start the vertical centering */
 
-      /* Handle the widths */
-      .masthead,
-      .mastfoot,
-      .cover-container {
-        width: 100%;
-        /* Must be percentage or pixels for horizontal alignment */
-      }
-    
+    .site-wrapper-inner {
+      vertical-align: middle;
+    }
+
+    /* Handle the widths */
+
+    .masthead,
+    .mastfoot,
+    .cover-container {
+      width: 100%;
+      /* Must be percentage or pixels for horizontal alignment */
+    }
+
 
     @media (min-width: 992px) {
 
@@ -203,38 +216,40 @@
   <!-- <h1>Landing Page</h1>
   <a href="login.html"><button>Click Here To Login</button></a> -->
   <div id="container">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <div class="masthead clearfix">
+          <div class="inner">
+            <nav>
+              <ul class="nav masthead-nav">
+                <li>
+                  <a href="#">Events</a>
+                </li>
+                <li>
+                  <a href="#">Login</a>
+                </li>
+              </ul>
+            </nav>
           </div>
+        </div>
 
-          <div class="inner cover" style="z-index: 10;">
-            <h1 class="cover-heading">Bharatham 2k18</h1>
-            <!-- <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit</p>
+        <div class="inner cover" style="z-index: 10;">
+          <h1 class="cover-heading">Bharatham 2k18</h1>
+          <p class="lead cus_font">November 9th and 10th</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p> -->
-          </div>
+              <!-- <a href="#" class="btn btn-lg btn-default">Learn more</a> -->
+            </p>
+        </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
+        <div class="mastfoot">
+          <div class="inner">
+            <p>Rajagiri School of Engineering &amp; Technology</p>
           </div>
-
         </div>
 
       </div>
+
+    </div>
 
   </div>
   <script src="sketch.js"></script>
