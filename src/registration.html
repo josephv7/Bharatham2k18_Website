@@ -1,129 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="UTF-8">
-  <title>Registration</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="bharatham, bharatham2k18, registration, RSET, TEDxRSET, NAAC, FISAT, kochi">
-  <meta name="robots" content="index, follow">
-  <link rel="icon"  type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="bharatham, bharatham2k18, registration, RSET, TEDxRSET, NAAC, FISAT, kochi">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
-  <style>
-      body{
-          background: black;
-      }
-      /* font-family: 'Titillium Web', bold; */
-  </style>
-  <!-- <link rel="stylesheet" href="./css/registration.scss"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+        }
+
+        /* font-family: 'Titillium Web', bold; */
+    </style>
+    <!-- <link rel="stylesheet" href="./css/registration.scss"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
+
 <body>
-  <h1 style="font-family: 'Titillium Web', bold;">Registration Page</h1>
-  <button type="logout" id="logout-button" class="cus_font">Logout</button>
+    <h1 style="font-family: 'Titillium Web', bold; margin-left:10%;">Registration</h1>
+
+    <button type="button" id="logout-button" class="btn btn-primary btn-lg" style="margin-left:10%;">Logout</button>
 
 
- 
+
+    <div class="container">
 
 
-  <div class="container">
-    
-  
 
-        <form class="gform" method="POST" data-email="example@email.net"
-              action="https://script.google.com/macros/s/AKfycbxG0Sz5aMeKUKX6UDJiykSyvvfZ-r8gNC88Lx6MeeOsiFN3o7GO/exec">
-           <div class="form-elements">
-            <ul class="flex-outer">
-                <li>
-                    <label for="full_name" style="font-family: 'Titillium Web', bold;">Full Name *</label>
-                    <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Titillium Web', bold;"/>
-                </li>
-                <li>
-                    <label for="house" style="font-family: 'Titillium Web', sans-serif;"> House *</label>
-                    <input id="house" name="house" required placeholder="House"style="font-family: 'Titillium Web', bold;" />
-                </li>
+        <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbxG0Sz5aMeKUKX6UDJiykSyvvfZ-r8gNC88Lx6MeeOsiFN3o7GO/exec">
+            <div class="form-elements">
+                <ul class="flex-outer">
+                    <li>
+                        <label for="full_name" style="font-family: 'Titillium Web', bold;">Full Name *</label>
+                        <input id="full_name" type=text name="full_name" required placeholder="eg: Your Name" style="font-family: 'Titillium Web', bold; color: black;"
+                        />
+                    </li>
+                    <li>
+                        <label for="house" style="font-family: 'Titillium Web', sans-serif;"> House *</label>
+                        <input id="house" name="house" required placeholder="House" style="font-family: 'Titillium Web', bold; color: black;" />
+                    </li>
 
-                <li>
-                    <label for="sem_class" style="font-family: 'Titillium Web', bold;"> Class *</label>
-                    <input id="sem_class" name="sem_class" required placeholder="eg: S7 CS Beta"style="font-family: 'Titillium Web', bold;" />
-                </li>
+                    <li>
+                        <label for="sem_class" style="font-family: 'Titillium Web', bold;"> Class *</label>
+                        <input id="sem_class" name="sem_class" required placeholder="eg: S7 CS Beta" style="font-family: 'Titillium Web', bold; color: black;"
+                        />
+                    </li>
 
 
-                <li>
-                    <label for="event_id"style="font-family: 'Titillium Web', bold;">Event *</label>
-                    <select id="event_id" name="event_id">
-                        <option value="LE1" style="font-family: 'Titillium Web', bold;">Poetry Writing Malayalam</option>
-                        <option value="LE2" style="font-family: 'Titillium Web', bold;">Essay Writing English</option>
-                        <option value="LE3" style="font-family: 'Titillium Web', bold;">Pencil Drawing</option>
-                        <option value="LE4" style="font-family: 'Titillium Web', bold;">Poetry Writing English</option>
-                        <option value="LE5" style="font-family: 'Titillium Web', bold;">Short Story Malayalam</option>
-                        <option value="LE6" style="font-family: 'Titillium Web', bold;">Comic Strip</option>
-                        <option value="LE7" style="font-family: 'Titillium Web', bold;">Film Review</option>
-                        <option value="LE8" style="font-family: 'Titillium Web', bold;">Paper Collage</option>
-                        <option value="LE9" style="font-family: 'Titillium Web', bold;">Essay Writing Malayalam</option>
-                        <option value="LE10" style="font-family: 'Titillium Web', bold;">Short Story English</option>
-                        <option value="LE11" style="font-family: 'Titillium Web', bold;">Travelogue</option>
-                        <option value="LE12" style="font-family: 'Titillium Web', bold;">Caricature</option>
-                        <option value="LE13" style="font-family: 'Titillium Web', bold;">Poster Designing</option>
-                        <option value="LE14" style="font-family: 'Titillium Web', bold;">Meme Making</option>
-                    </select>
-                    <!-- <input id="event_id" name="event_id" type="number" value=""
-                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Titillium Web', bold;"/>
-                    TODO : type for number -->
-                </li>
+                    <li>
+                        <label for="event_id" style="font-family: 'Titillium Web', bold;">Event *</label>
+                        <select class="form-control" id="event_id" name="event_id">
+                            <option value="LE1" style="font-family: 'Titillium Web', bold;">Poetry Writing Malayalam</option>
+                            <option value="LE2" style="font-family: 'Titillium Web', bold;">Essay Writing English</option>
+                            <option value="LE3" style="font-family: 'Titillium Web', bold;">Pencil Drawing</option>
+                            <option value="LE4" style="font-family: 'Titillium Web', bold;">Poetry Writing English</option>
+                            <option value="LE5" style="font-family: 'Titillium Web', bold;">Short Story Malayalam</option>
+                            <option value="LE6" style="font-family: 'Titillium Web', bold;">Comic Strip</option>
+                            <option value="LE7" style="font-family: 'Titillium Web', bold;">Film Review</option>
+                            <option value="LE8" style="font-family: 'Titillium Web', bold;">Paper Collage</option>
+                            <option value="LE9" style="font-family: 'Titillium Web', bold;">Essay Writing Malayalam</option>
+                            <option value="LE10" style="font-family: 'Titillium Web', bold;">Short Story English</option>
+                            <option value="LE11" style="font-family: 'Titillium Web', bold;">Travelogue</option>
+                            <option value="LE12" style="font-family: 'Titillium Web', bold;">Caricature</option>
+                            <option value="LE13" style="font-family: 'Titillium Web', bold;">Poster Designing</option>
+                            <option value="LE14" style="font-family: 'Titillium Web', bold;">Meme Making</option>
+                        </select>
 
-                
-                <!-- <li>
-                    <label for="contact_no"style="font-family: 'Titillium Web', bold;">Contact Number *</label>
-                    <input id="contact_no" name="contact_no" type="number" value=""
-                          maxlength="10" required placeholder="eg: 9447718219" style="font-family: 'Titillium Web', bold;"/>
-    
-                </li> -->
-            
-                <li>
-                    <button type="submit">Submit</button>
-                </li>
-            </ul>
-           </div>
-    
+                    </li>
+                    <div class="col-md-3 text-center">
+                        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+                    </div>
+                </ul>
+            </div>
+
             <div class="thankyou_message" style="display:none;">
-            <center><h2 style="font-family: 'Titillium Web', bold;font-weight: 300;">Thanks for contacting us!
-                We will get back to you soon!</h2></center>
-    </div>
+                <h2 style="font-family: 'Titillium Web', bold;font-weight: 300; text-align:center;">Your submission is successful. Refresh page to add more entries.</h2>
+
+            </div>
         </form>
-    
+
     </div>
-    
-    <script data-cfasync="false" type="text/javascript"
-            src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
-    
 
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
-<script>
-    // var firebase = require("firebase/app");
-    // var auth = require("firebase/auth");
-    // TODO require not working
-  
-  var config = {
-    apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
-    authDomain: "bharatham2k18-903ae.firebaseapp.com",
-    databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
-    projectId: "bharatham2k18-903ae",
-    storageBucket: "bharatham2k18-903ae.appspot.com",
-    messagingSenderId: "46039964633"
-  };
-  firebase.initializeApp(config);
+    <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 
 
 
@@ -131,15 +99,39 @@
 
 
 
-$("#logout-button").click(function(event){
-			 event.preventDefault();
-             firebase.auth().signOut().then(function() {
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+    <script>
+        // var firebase = require("firebase/app");
+        // var auth = require("firebase/auth");
+        // TODO require not working
+
+        var config = {
+            apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
+            authDomain: "bharatham2k18-903ae.firebaseapp.com",
+            databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
+            projectId: "bharatham2k18-903ae",
+            storageBucket: "bharatham2k18-903ae.appspot.com",
+            messagingSenderId: "46039964633"
+        };
+        firebase.initializeApp(config);
+
+
+
+
+
+
+
+        $("#logout-button").click(function (event) {
+            event.preventDefault();
+            firebase.auth().signOut().then(function () {
                 // Sign-out successful.
-             window.location.href = "login.html"; 
-             }).catch(function(error) {
-               // An error happened.
-                });
-		});
+                window.location.href = "login.html";
+            }).catch(function (error) {
+                // An error happened.
+            });
+        });
 		// firebase.auth().onAuthStateChanged(function(user) {
 		// 	if (user) {
 		//     	// User is signed in
@@ -151,9 +143,10 @@ $("#logout-button").click(function(event){
 		// });
 
 
-  
 
-  </script>
+
+    </script>
 
 </body>
+
 </html>

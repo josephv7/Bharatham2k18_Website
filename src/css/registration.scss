@@ -73,26 +73,6 @@ body {
   border: none;
 }
 
-.flex-outer li button {
-  margin-left: auto;
-  padding: 18px 46px;
-  border: none;
-  background: #e62b1e;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  border-radius: 2px;
-  text-justify: auto;
-  /* font-weight: bolder; */
-}
-.flex-outer li button:hover {
-  background: #8c8c8c;
-  -webkit-transition: 0.5s ease-out;
-  -moz-transition: 0.5s ease-out;
-  -o-transition: 0.5s ease-out;
-  -ms-transition: 0.5s ease-out;
-  transition: 0.2s ease-out;
-}
 @media (max-width: 480px) {
   .flex-outer li button {
     width: 100%;
