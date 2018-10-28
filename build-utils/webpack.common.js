@@ -4,7 +4,9 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: {
-    'main': ''
+    "main": "src/index.js",
+    "login": "src/js/login.js",
+    "registration": "src/js/registration.js",
   },
   output: {
     filename: "[hash].bundle.js",
@@ -12,7 +14,7 @@ const config = {
     publicPath: "/"
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".js"]
   },
   module: {
     rules: [
