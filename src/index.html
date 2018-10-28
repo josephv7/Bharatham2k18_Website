@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,373 @@
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <meta name="author" content="">
   <!-- Add http://ogp.me/ tags when ready -->
   <title>Landing Page</title>
+  <style>
+    /* Links */
+    a,
+    a:focus,
+    a:hover {
+      color: #fff;
+    }
+
+    /* Custom default button */
+
+    .btn-default,
+    .btn-default:hover,
+    .btn-default:focus {
+      color: #333;
+      text-shadow: none;
+      /* Prevent inheritance from `body` */
+      background-color: #fff;
+      border: 1px solid #fff;
+    }
+
+
+    /*
+ * Base structure
+ */
+
+    html,
+    body {
+      height: 100vh;
+      background-color: #333;
+      font-family: 'Play', sans-serif;
+      background: #2b2b2b;
+      margin: 0;
+    }
+
+    body {
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    }
+
+    /* Extra markup and styles for table-esque vertical and horizontal centering */
+
+    .site-wrapper {
+      display: table;
+      width: 100%;
+      height: 100%;
+      /* For at least Firefox */
+      min-height: 100%;
+      -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
+    }
+
+    .site-wrapper-inner {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .cover-container {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /* Padding for spacing */
+
+    .inner {
+      padding: 30px;
+    }
+
+
+    /*
+ * Header
+ */
+
+    .masthead-brand {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .masthead-nav>li {
+      display: inline-block;
+    }
+
+    .masthead-nav>li+li {
+      margin-left: 20px;
+    }
+
+    .masthead-nav>li>a {
+      padding-right: 0;
+      padding-left: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      /* IE8 proofing */
+      color: rgba(255, 255, 255, .75);
+      border-bottom: 2px solid transparent;
+    }
+
+    .masthead-nav>li>a:hover,
+    .masthead-nav>li>a:focus {
+      background-color: transparent;
+      border-bottom-color: #a9a9a9;
+      border-bottom-color: rgba(255, 255, 255, .25);
+    }
+
+    .masthead-nav>.active>a,
+    .masthead-nav>.active>a:hover,
+    .masthead-nav>.active>a:focus {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .masthead-brand {
+        float: left;
+      }
+      .masthead-nav {
+        float: right;
+      }
+    }
+
+
+    /*
+ * Cover
+ */
+
+    .cover {
+      padding: 0 20px;
+    }
+
+    .cover .btn-lg {
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+
+    /*
+ * Footer
+ */
+
+    .mastfoot {
+      color: #999;
+      /* IE8 proofing */
+      color: rgba(255, 255, 255, .5);
+    }
+
+
+    /*
+ * Affix and center
+ */
+
+    @media (min-width: 768px) {
+      /* Pull out the header and footer */
+      .masthead {
+        position: fixed;
+        top: 0;
+      }
+      .mastfoot {
+        position: fixed;
+        bottom: 0;
+      }
+      /* Start the vertical centering */
+      .site-wrapper-inner {
+        vertical-align: middle;
+      }
+      /* Handle the widths */
+      .masthead,
+      .mastfoot,
+      .cover-container {
+        width: 100%;
+        /* Must be percentage or pixels for horizontal alignment */
+      }
+    }
+
+    @media (min-width: 992px) {
+      .masthead,
+      .mastfoot,
+      .cover-container {
+        width: 700px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Landing Page</h1>
-  <a href="login.html"><button>Click Here To Login</button></a>
+  <!-- <h1>Landing Page</h1>
+  <a href="login.html"><button>Click Here To Login</button></a> -->
+  <div id="container"></div>
+  <script src="sketch.js"></script>
+  <script>
+
+    // import defaultExport from "sketch-js";
+
+    function Particle(x, y, radius) {
+      this.init(x, y, radius);
+    }
+
+    Particle.prototype = {
+
+      init: function (x, y, radius) {
+
+        this.alive = true;
+
+        this.radius = radius || 10;
+        this.wander = 0.15;
+        this.theta = random(TWO_PI);
+        this.drag = 0.92;
+        this.color = '#fff';
+
+        this.x = x || 0.0;
+        this.y = y || 0.0;
+
+        this.vx = 0.0;
+        this.vy = 0.0;
+      },
+
+      move: function () {
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        this.vx *= this.drag;
+        this.vy *= this.drag;
+
+        this.theta += random(-0.5, 0.5) * this.wander;
+        this.vx += sin(this.theta) * 0.1;
+        this.vy += cos(this.theta) * 0.1;
+
+        this.radius *= 0.96;
+        this.alive = this.radius > 0.5;
+      },
+
+      draw: function (ctx) {
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, TWO_PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    };
+
+    // ----------------------------------------
+    // Example
+    // ----------------------------------------
+
+    var MAX_PARTICLES = 280;
+    var COLOURS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423'];
+
+    var particles = [];
+    var pool = [];
+
+    var demo = Sketch.create({
+      container: document.getElementById('container')
+    });
+
+    demo.setup = function () {
+
+      // Set off some initial particles.
+      var i, x, y;
+
+      for (i = 0; i < 20; i++) {
+        x = (demo.width * 0.5) + random(-100, 100);
+        y = (demo.height * 0.5) + random(-100, 100);
+        demo.spawn(x, y);
+      }
+    };
+
+    demo.spawn = function (x, y) {
+
+      if (particles.length >= MAX_PARTICLES)
+        pool.push(particles.shift());
+
+      particle = pool.length ? pool.pop() : new Particle();
+      particle.init(x, y, random(5, 40));
+
+      particle.wander = random(0.5, 2.0);
+      particle.color = random(COLOURS);
+      particle.drag = random(0.9, 0.99);
+
+      theta = random(TWO_PI);
+      force = random(2, 8);
+
+      particle.vx = sin(theta) * force;
+      particle.vy = cos(theta) * force;
+
+      particles.push(particle);
+    }
+
+    demo.update = function () {
+
+      var i, particle;
+
+      for (i = particles.length - 1; i >= 0; i--) {
+
+        particle = particles[i];
+
+        if (particle.alive) particle.move();
+        else pool.push(particles.splice(i, 1)[0]);
+      }
+    };
+
+    demo.draw = function () {
+
+      demo.globalCompositeOperation = 'lighter';
+
+      for (var i = particles.length - 1; i >= 0; i--) {
+        particles[i].draw(demo);
+      }
+    };
+
+    demo.mousemove = function () {
+
+      var particle, theta, force, touch, max, i, j, n;
+
+      for (i = 0, n = demo.touches.length; i < n; i++) {
+
+        touch = demo.touches[i], max = random(1, 4);
+        for (j = 0; j < max; j++) demo.spawn(touch.x, touch.y);
+      }
+    };
+
+
+  </script>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">Cover</h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="inner cover" style="z-index: -1;">
+          <h1 class="cover-heading">Cover your page.</h1>
+          <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-default">Learn more</a>
+          </p>
+        </div>
+
+        <div class="mastfoot">
+          <div class="inner">
+            <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
+
 </html>
