@@ -11,26 +11,33 @@
   <meta name="author" content="">
   <!-- Add http://ogp.me/ tags when ready -->
   <title>Title of Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
+    .cus_font{
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 2.5rem;
+    }
+  </style>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
   <link rel="stylesheet" href="./css/login.scss">
 </head>
 
 <body>
   <div class="wrapper">
     <div class="container">
-      <h1>LOGIN</h1>
+      <h1 class="cus_font">LOGIN</h1>
       <br><br>
       <div class="error">
         <p id="errorText"></p>
       </div>
       <form class="form">
-        <input type="email" id="username" placeholder="Username">
+        <input type="email" id="username" placeholder="Email Id">
         <input type="password" id="password" placeholder="Password">
         <br><br>
-        <button type="submit" id="login-button">Login</button>
+        <button type="submit" id="login-button" class="cus_font">Login</button>
       </form>
     </div>
   </div>
@@ -39,10 +46,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
   <script>
-    // var firebase = require("firebase/app");
-    // var auth = require("firebase/auth");
-    // TODO require not working
-
+    
     var config = {
       apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
       authDomain: "bharatham2k18-903ae.firebaseapp.com",
@@ -59,7 +63,6 @@
       var email = document.getElementById('username').value;
       var password = document.getElementById('password').value;
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         $(".error").show(2000);
@@ -68,11 +71,11 @@
     });
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        // User is signed in
+        
         window.location.href = "registration.html";
       } else {
-        // No user is signed in.
-        console.log("No One");
+        
+        console.log("Signed Out!");
       }
     });
 
