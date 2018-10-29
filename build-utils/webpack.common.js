@@ -10,7 +10,7 @@ const config = {
     "login": "./src/js/login.js",
   },
   output: {
-    filename: "[hash].bundle.js",
+    filename: "[hash].[name].bundle.js",
     path: commonPaths.outputPath,
     publicPath: "/"
   },
