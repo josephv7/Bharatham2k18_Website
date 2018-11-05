@@ -5,9 +5,9 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: {
-    "main": "./src/index.js",
-    "registration": "./src/js/registration.js",
-    "login": "./src/js/login.js",
+    main: "./src/index.js",
+    registration: "./src/js/registration.js",
+    login: "./src/js/login.js"
   },
   output: {
     filename: "[hash].[name].bundle.js",
@@ -23,10 +23,8 @@ const config = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
-            loader: "url-loader",
-            options: {
-              limit: 1000
-            }
+            loader: "file-loader",
+            options: {}
           }
         ]
       },
@@ -48,18 +46,18 @@ const config = {
     new htmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
-      chunks: ["main"],
+      chunks: ["main"]
     }),
     new htmlWebpackPlugin({
       filename: "login.html",
       template: "./src/login.html",
-      chunks: ["login"],
+      chunks: ["login"]
     }),
     new htmlWebpackPlugin({
       filename: "registration.html",
       template: "./src/registration.html",
-      chunks: ["registration"],
-    }),
+      chunks: ["registration"]
+    })
   ]
 };
 
