@@ -31,13 +31,6 @@ const config = {
       {
         test: /\.html$/,
         loader: "html-loader"
-      },
-      {
-        test: /.ts?$/,
-        use: {
-          loader: "babel-loader"
-        },
-        exclude: /(node_modules|dist|build-utils|webpack.config.js)/
       }
     ]
   },
