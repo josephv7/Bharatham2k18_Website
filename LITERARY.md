@@ -14,3 +14,4 @@
 - LE12 - Caricature
 - LE13 - Poster Designing
 - LE14 - Meme Making
+- LE15 - Wall Art
