@@ -32,15 +32,14 @@
 
         gtag('config', 'UA-124518309-3');
     </script>
-<<<<<<< HEAD
+
     <style>
         body{
             background: white;
         }
     </style>
 
-=======
->>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
+
 </head>
 
 <body>
@@ -56,12 +55,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-<<<<<<< HEAD
-
-
-=======
         var app = undefined
->>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
         var config = {
             apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
             authDomain: "bharatham2k18-903ae.firebaseapp.com",
@@ -70,94 +64,6 @@
             storageBucket: "bharatham2k18-903ae.appspot.com",
             messagingSenderId: "46039964633"
         };
-<<<<<<< HEAD
-        firebase.initializeApp(config);
-        var ref = firebase.database().ref();
-
-        var aghoras, aryans, mughals, rajputs, spartans, vikings;
-
-
-
-        ref.child('Score').child('House').child('aghoras').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            arghoras = snapshot.val();
-
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        ref.child('Score').child('House').child('aryans').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            aryans = snapshot.val();
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        ref.child('Score').child('House').child('mughals').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            mughals = snapshot.val();
-
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        ref.child('Score').child('House').child('rajputs').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            rajputs = snapshot.val();
-
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        ref.child('Score').child('House').child('spartans').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            spartans = snapshot.val();
-
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        ref.child('Score').child('House').child('vikings').on("value", function (snapshot) {
-            console.log(snapshot.val());
-            vikings = snapshot.val();
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        // console.log('aghoras',aghoras.toString());
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ["House", "Points", { role: "style" }],
-                ["Aghoras", 12, "color: #7c3e92"],
-                ["Aryans",36 , "color: #fbbd0a"],
-                ["Mughals",22, "#color: #dd3333"],
-                ["Rajputs", 44, "color: #fd6a04"],
-                ["Spartans", 21, "color: #ed48b7"],
-                ["Vikings", 36, "color: #022b7b"]
-            ]);
-
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                {
-                    calc: "stringify",
-                    sourceColumn: 1,
-                    type: "string",
-                    role: "annotation"
-                },
-                2]);
-
-            var options = {
-
-                width: 1000,
-                height: 700,
-                bar: { groupWidth: "95%" },
-                legend: { position: "none" },
-            };
-            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-            chart.draw(view, options);
-=======
         app = firebase.initializeApp(config);
         if (app) {
             firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
@@ -194,7 +100,6 @@
                     chart.draw(view, options);
                 }
             })
->>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
         }
     </script>
 
