@@ -3,7 +3,6 @@
 <meta content=#000000 name=theme-color>
 <meta content=#000000 name=msapplication-navbutton-color>
 <meta content=#000000 name=apple-mobile-web-app-status-bar-style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +18,12 @@
     <meta property="og:title" content="">
     <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
     <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-
-
-
     <meta property="og:title" content="BHARATHAM 2K18">
     <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
     <meta property="og:url" content="https://www.bharatham2k18.in">
     <meta property="og:title" content="">
     <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
     <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -37,12 +32,15 @@
 
         gtag('config', 'UA-124518309-3');
     </script>
+<<<<<<< HEAD
     <style>
         body{
             background: white;
         }
     </style>
 
+=======
+>>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
 </head>
 
 <body>
@@ -58,8 +56,12 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
+<<<<<<< HEAD
 
 
+=======
+        var app = undefined
+>>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
         var config = {
             apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
             authDomain: "bharatham2k18-903ae.firebaseapp.com",
@@ -68,6 +70,7 @@
             storageBucket: "bharatham2k18-903ae.appspot.com",
             messagingSenderId: "46039964633"
         };
+<<<<<<< HEAD
         firebase.initializeApp(config);
         var ref = firebase.database().ref();
 
@@ -154,6 +157,44 @@
             };
             var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
             chart.draw(view, options);
+=======
+        app = firebase.initializeApp(config);
+        if (app) {
+            firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
+                google.charts.load("current", { packages: ["corechart"] });
+                google.charts.setOnLoadCallback(drawChart);
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ["House", "Points", { role: "style" }],
+                        ["Aghoras", + snapshot.val().aghoras, "color: #7c3e92"],
+                        ["Aryans", + snapshot.val().aryans, "color: #fbbd0a"],
+                        ["Mughals", + snapshot.val().mughals, "#color: #dd3333"],
+                        ["Rajputs", + snapshot.val().rajputs, "color: #fd6a04"],
+                        ["Spartans", + snapshot.val().spartans, "color: #ed48b7"],
+                        ["Vikings", + snapshot.val().vikings, "color: #022b7b"]
+                    ]);
+                    var view = new google.visualization.DataView(data);
+                    view.setColumns([0, 1,
+                        {
+                            calc: "stringify",
+                            sourceColumn: 1,
+                            type: "string",
+                            role: "annotation"
+                        },
+                        2]);
+
+                    var options = {
+
+                        width: 1000,
+                        height: 1000,
+                        bar: { groupWidth: "95%" },
+                        legend: { position: "none" },
+                    };
+                    var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+                    chart.draw(view, options);
+                }
+            })
+>>>>>>> 9667e0f85f48ce23967b7a07d93ff058933c01f6
         }
     </script>
 
