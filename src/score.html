@@ -37,12 +37,18 @@
 
         gtag('config', 'UA-124518309-3');
     </script>
+    <style>
+        body{
+            background: white;
+        }
+    </style>
 
 </head>
 
 <body>
-
-    <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+<center>
+    <div id="barchart_values" style="width: 100vh; height: 100vh;"></div>
+</center>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
@@ -51,6 +57,7 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+
 
 
         var config = {
@@ -62,30 +69,70 @@
             messagingSenderId: "46039964633"
         };
         firebase.initializeApp(config);
+        var ref = firebase.database().ref();
 
         var aghoras, aryans, mughals, rajputs, spartans, vikings;
-        firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
-            // var house = snapshot.child(uid).val();
-            aghoras = snapshot.val().child('aghoras');
-            aryans = snapshot.val().child('aryans');
-            mughals = snapshot.val().child('mughals');
-            rajputs = snapshot.val().child('rajputs');
-            spartans = snapshot.val().child('spartans');
-            vikings = snapshot.val().child('vikings');
-        })
 
-        console.log('aghoras',aghoras);
+
+
+        ref.child('Score').child('House').child('aghoras').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            arghoras = snapshot.val();
+
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        ref.child('Score').child('House').child('aryans').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            aryans = snapshot.val();
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        ref.child('Score').child('House').child('mughals').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            mughals = snapshot.val();
+
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        ref.child('Score').child('House').child('rajputs').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            rajputs = snapshot.val();
+
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        ref.child('Score').child('House').child('spartans').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            spartans = snapshot.val();
+
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        ref.child('Score').child('House').child('vikings').on("value", function (snapshot) {
+            console.log(snapshot.val());
+            vikings = snapshot.val();
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        // console.log('aghoras',aghoras.toString());
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ["House", "Points", { role: "style" }],
-                ["Aghoras", +aghoras, "#b87333"],
-                ["Aryans", +aryans, "silver"],
-                ["Mughals", +mughals, "gold"],
-                ["Rajputs", +rajputs, "gold"],
-                ["Spartans", +spartans, "color: #e5e4e2"],
-                ["Vikings", +vikings, "color: #e5e4e2"]
+                ["Aghoras", 12, "color: #7c3e92"],
+                ["Aryans",36 , "color: #fbbd0a"],
+                ["Mughals",22, "#color: #dd3333"],
+                ["Rajputs", 44, "color: #fd6a04"],
+                ["Spartans", 21, "color: #ed48b7"],
+                ["Vikings", 36, "color: #022b7b"]
             ]);
 
             var view = new google.visualization.DataView(data);
@@ -101,7 +148,7 @@
             var options = {
 
                 width: 1000,
-                height: 1000,
+                height: 700,
                 bar: { groupWidth: "95%" },
                 legend: { position: "none" },
             };
