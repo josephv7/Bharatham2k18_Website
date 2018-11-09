@@ -3,7 +3,6 @@
 <meta content=#000000 name=theme-color>
 <meta content=#000000 name=msapplication-navbutton-color>
 <meta content=#000000 name=apple-mobile-web-app-status-bar-style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +18,12 @@
     <meta property="og:title" content="">
     <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
     <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-
-
-
     <meta property="og:title" content="BHARATHAM 2K18">
     <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
     <meta property="og:url" content="https://www.bharatham2k18.in">
     <meta property="og:title" content="">
     <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
     <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -37,7 +32,6 @@
 
         gtag('config', 'UA-124518309-3');
     </script>
-
 </head>
 
 <body>
@@ -52,7 +46,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
-
+        var app = undefined
         var config = {
             apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
             authDomain: "bharatham2k18-903ae.firebaseapp.com",
@@ -61,52 +55,42 @@
             storageBucket: "bharatham2k18-903ae.appspot.com",
             messagingSenderId: "46039964633"
         };
-        firebase.initializeApp(config);
+        app = firebase.initializeApp(config);
+        if (app) {
+            firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
+                google.charts.load("current", { packages: ["corechart"] });
+                google.charts.setOnLoadCallback(drawChart);
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ["House", "Points", { role: "style" }],
+                        ["Aghoras", + snapshot.val().aghoras, "#b87333"],
+                        ["Aryans", + snapshot.val().aryans, "silver"],
+                        ["Mughals", + snapshot.val().mughals, "gold"],
+                        ["Rajputs", + snapshot.val().rajputs, "gold"],
+                        ["Spartans", + snapshot.val().spartans, "color: #e5e4e2"],
+                        ["Vikings", + snapshot.val().vikings, "color: #e5e4e2"]
+                    ]);
+                    var view = new google.visualization.DataView(data);
+                    view.setColumns([0, 1,
+                        {
+                            calc: "stringify",
+                            sourceColumn: 1,
+                            type: "string",
+                            role: "annotation"
+                        },
+                        2]);
 
-        var aghoras, aryans, mughals, rajputs, spartans, vikings;
-        firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
-            // var house = snapshot.child(uid).val();
-            aghoras = snapshot.val().child('aghoras');
-            aryans = snapshot.val().child('aryans');
-            mughals = snapshot.val().child('mughals');
-            rajputs = snapshot.val().child('rajputs');
-            spartans = snapshot.val().child('spartans');
-            vikings = snapshot.val().child('vikings');
-        })
+                    var options = {
 
-        console.log('aghoras',aghoras);
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ["House", "Points", { role: "style" }],
-                ["Aghoras", +aghoras, "#b87333"],
-                ["Aryans", +aryans, "silver"],
-                ["Mughals", +mughals, "gold"],
-                ["Rajputs", +rajputs, "gold"],
-                ["Spartans", +spartans, "color: #e5e4e2"],
-                ["Vikings", +vikings, "color: #e5e4e2"]
-            ]);
-
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                {
-                    calc: "stringify",
-                    sourceColumn: 1,
-                    type: "string",
-                    role: "annotation"
-                },
-                2]);
-
-            var options = {
-
-                width: 1000,
-                height: 1000,
-                bar: { groupWidth: "95%" },
-                legend: { position: "none" },
-            };
-            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-            chart.draw(view, options);
+                        width: 1000,
+                        height: 1000,
+                        bar: { groupWidth: "95%" },
+                        legend: { position: "none" },
+                    };
+                    var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+                    chart.draw(view, options);
+                }
+            })
         }
     </script>
 
