@@ -63,12 +63,12 @@
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
                         ["House", "Points", { role: "style" }],
-                        ["Aghoras", + snapshot.val().aghoras, "#b87333"],
-                        ["Aryans", + snapshot.val().aryans, "silver"],
-                        ["Mughals", + snapshot.val().mughals, "gold"],
-                        ["Rajputs", + snapshot.val().rajputs, "gold"],
-                        ["Spartans", + snapshot.val().spartans, "color: #e5e4e2"],
-                        ["Vikings", + snapshot.val().vikings, "color: #e5e4e2"]
+                        ["Aghoras", + snapshot.val().aghoras, "color: #7c3e92"],
+                        ["Aryans", + snapshot.val().aryans, "color: #fbbd0a"],
+                        ["Mughals", + snapshot.val().mughals, "#color: #dd3333"],
+                        ["Rajputs", + snapshot.val().rajputs, "color: #fd6a04"],
+                        ["Spartans", + snapshot.val().spartans, "color: #ed48b7"],
+                        ["Vikings", + snapshot.val().vikings, "color: #022b7b"]
                     ]);
                     var view = new google.visualization.DataView(data);
                     view.setColumns([0, 1,
