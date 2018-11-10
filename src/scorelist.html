@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta content=#000000 name=theme-color>
+<meta content=#000000 name=msapplication-navbutton-color>
+<meta content=#000000 name=apple-mobile-web-app-status-bar-style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <title>Live Scores</title>
+    <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
+    <meta property="og:title" content="BHARATHAM 2K18">
+    <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+    <meta property="og:url" content="https://www.bharatham2k18.in">
+    <meta property="og:title" content="">
+    <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
+    <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
+    <meta property="og:title" content="BHARATHAM 2K18">
+    <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+    <meta property="og:url" content="https://www.bharatham2k18.in">
+    <meta property="og:title" content="">
+    <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
+    <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-124518309-3');
+    </script>
+
+
+<style>
+    html {
+      font-family: 'Open Sans', sans-serif;
+      background: white;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: black;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+    tr{
+      text-align: center;
+    }
+    img {
+      width: 90%;
+    }
+    .score {
+      font-size: 3em;
+    }
+    span {
+      background-color: white;
+    }
+    #aghoras {
+      color: #7c3e92;
+      padding: 10px;
+    }
+    #mughals {
+      color: #dd3333;
+      padding: 10px;
+    }
+    #vikings {
+      color: #022b7b;
+      padding: 10px;
+    }
+    #aryans {
+      color: #fbbd0a;
+      padding: 10px;
+    }
+    #rajputs {
+      color: #fd6a04;
+      padding: 10px;
+    }
+    #spartans {
+      color: #ed48b7;
+      padding: 10px;
+    }
+</style>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+
+<body>
+    <h1>POINTS TABLE</h1>
+    <hr>
+    
+    <table>
+    <tr>
+          
+        <td class="innerContainer">
+            <img src="images/Aghoras.png"/>
+        </td>
+
+      
+        <td class="innerContainer">
+          <img src="images/Aryans.png"/>
+        </td>
+      
+        <td class="innerContainer">
+          <img src="images/Mughals.png"/>
+        </td>
+      
+        <td class="innerContainer">
+          <img src="images/Rajputs.png"/>
+        </td>
+      
+        <td class="innerContainer">
+          <img src="images/Spartans.png"/>
+        </td>
+      
+        <td class="innerContainer">
+          <img src="images/Vikings.png"/>
+        </td>
+      </tr>
+      
+      <tr>
+
+        <td class="innerContainer">
+          <br>
+          <br>
+          <span class="score" id="aghoras"></span>
+        </td>
+
+        <td class="innerContainer">
+          <br>
+          <br>
+          <span class="score" id="aryans"></span>
+        </td>
+      
+      
+        <td class="innerContainer">
+          <br>        
+          <br>
+          <span class="score" id="mughals"></span>
+        </td>
+      
+      
+        <td class="innerContainer">
+          <br>
+          <br>
+          <span class="score" id="rajputs"></span>
+        </td>
+      
+      
+        <td class="innerContainer">
+          <br>
+          <br>
+          <span class="score" id="spartans"></span>
+        </td>
+      
+        <td class="innerContainer">
+          <br>
+          <br>
+          <span class="score" id="vikings"></span>
+        </td>
+  
+      </tr>
+  
+      </table>
+  
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
+    <script>
+      var spartans=0,mughals=0,rajputs=0,aryans=0,vikings=0,aghoras=0;
+      var config = {
+            apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
+            authDomain: "bharatham2k18-903ae.firebaseapp.com",
+            databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
+            projectId: "bharatham2k18-903ae",
+            storageBucket: "bharatham2k18-903ae.appspot.com",
+            messagingSenderId: "46039964633"
+        };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+  
+      URLRef = database.ref().child('Score').child('House').child('spartans');
+      URLRef.on('value', function(snapshot) {
+          spartans = snapshot.val();  
+          document.getElementById('spartans').innerHTML = snapshot.val();
+      });
+  
+      URLRef = database.ref().child('Score').child('House').child('rajputs');
+      URLRef.on('value', function(snapshot) {
+          rajputs = snapshot.val();
+          document.getElementById('rajputs').innerHTML = snapshot.val();
+      });
+  
+      URLRef = database.ref().child('Score').child('House').child('aryans');
+      URLRef.on('value', function(snapshot) {
+          aryans = snapshot.val()
+          document.getElementById('aryans').innerHTML = snapshot.val();
+      });
+  
+      URLRef = database.ref().child('Score').child('House').child('mughals');
+      URLRef.on('value', function(snapshot) {
+          mughals = snapshot.val();
+          document.getElementById('mughals').innerHTML = snapshot.val();
+      });
+  
+      URLRef = database.ref().child('Score').child('House').child('vikings');
+      URLRef.on('value', function(snapshot) {
+          vikings = snapshot.val();
+          document.getElementById('vikings').innerHTML = snapshot.val();
+      });  
+      
+      URLRef = database.ref().child('Score').child('House').child('aghoras');
+      URLRef.on('value', function(snapshot) {
+          aghoras = snapshot.val();
+          document.getElementById('aghoras').innerHTML = snapshot.val();
+      });     
+  
+    </script>
+  </body>
+  
+  </html>
