@@ -66,7 +66,7 @@
         };
         app = firebase.initializeApp(config);
         if (app) {
-            firebase.database().ref().child('Score').child('House').once("value", function (snapshot) {
+            firebase.database().ref().child('Score').child('House').on("value", function (snapshot) {
                 google.charts.load("current", { packages: ["corechart"] });
                 google.charts.setOnLoadCallback(drawChart);
                 function drawChart() {
