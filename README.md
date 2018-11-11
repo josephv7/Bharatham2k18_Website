@@ -1,8 +1,12 @@
 # Bharatham 2k18
 
+Official Website of Bharatham2k18. Annual arts fest held at Rajagiri School Of Engineering & Technology.
+[Website](https://bharatham2k18.in)
+
+
 Uses Webpack 4, Babel 7
 
-## Quick Overview
+## Environment Setup
 
 - `git clone --depth 1` this repository to get started.
 - `npm install` to install needed dependencies.
