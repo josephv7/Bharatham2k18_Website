@@ -94,7 +94,7 @@
                 <li>
                   <label for="house" style="font-family: 'Titillium Web', sans-serif;"> House *</label>
                   <input id="house" name="house" required placeholder="House"
-                    style="font-family: 'Titillium Web', bold; color: black;text-transform:uppercase" disabled/>
+                    style="font-family: 'Titillium Web', bold; color: black;text-transform:uppercase" disabled />
                 </li>
 
                 <li>
@@ -131,12 +131,13 @@
                 </div>
               </ul>
             </div>
-        </div>
 
-        <div class="thankyou_message" style="display:none;">
-          <h2 style="font-family: 'Titillium Web', bold;font-weight: 300; text-align:center;">Your submission is
-            successful. Refresh page to add more entries.</h2>
 
+            <div class="thankyou_message" style="display:none;">
+              <h2 style="font-family: 'Titillium Web', bold;font-weight: 300; text-align:center;">Your submission is
+                successful. Refresh page to add more entries.</h2>
+
+            </div>
         </div>
         </form>
       </div>
@@ -205,7 +206,7 @@
           // console.log('here');
           var house = snapshot.child(uid).val();
           console.log(house);
-      
+
           document.getElementById('house').value = house;
           document.getElementById('email').value = email;
         })
