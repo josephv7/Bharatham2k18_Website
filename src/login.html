@@ -10,11 +10,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="UTF-8">
   <title>Login</title>
-  <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
+  <meta name="keywords" content="bharatham, bharatham2020, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
-  <meta property="og:title" content="BHARATHAM 2K18">
-  <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+  <meta property="og:title" content="BHARATHAM 2020">
+  <meta property="og:site_name" content="BHARATHAM 2020 | FEBRUARY 15,16 | RSET">
   <meta property="og:url" content="https://www.bharatham2k18.in">
   <meta property="og:title" content="">
   <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
@@ -24,7 +24,7 @@
 
 
   <meta property="og:title" content="BHARATHAM 2K18">
-  <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+  <meta property="og:site_name" content="BHARATHAM 2020 | FEBRUARY 15,16 | RSET">
   <meta property="og:url" content="https://www.bharatham2k18.in">
   <meta property="og:title" content="">
   <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
@@ -35,20 +35,7 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet"> -->
   <link rel="stylesheet" href="./css/login.css">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-124518309-3');
-
-  </script>
-
+<!--  ADD GOOGLE ANALYTICS-->
 
 </head>
 
@@ -72,18 +59,22 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
   <script>
-    var config = {
-      apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
-      authDomain: "bharatham2k18-903ae.firebaseapp.com",
-      databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
-      projectId: "bharatham2k18-903ae",
-      storageBucket: "bharatham2k18-903ae.appspot.com",
-      messagingSenderId: "46039964633"
+    var firebaseConfig = {
+      apiKey: "AIzaSyBNIdfUiS6XIr79DpvUHMlde6Z7Vi-ydnM",
+      authDomain: "bharatham2020-5015e.firebaseapp.com",
+      databaseURL: "https://bharatham2020-5015e.firebaseio.com",
+      projectId: "bharatham2020-5015e",
+      storageBucket: "bharatham2020-5015e.appspot.com",
+      messagingSenderId: "555267501145",
+      appId: "1:555267501145:web:295ce0078acc8254a69548",
+      measurementId: "G-33WPK3D8YC"
     };
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
 
     $("#login-button").click(function (event) {
