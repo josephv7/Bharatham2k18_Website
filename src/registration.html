@@ -168,15 +168,18 @@
     // var auth = require("firebase/auth");
     // TODO require not working
 
-    var config = {
-      apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
-      authDomain: "bharatham2020-903ae.firebaseapp.com",
-      databaseURL: "https://bharatham2020-903ae.firebaseio.com",
-      projectId: "bharatham2020-903ae",
-      storageBucket: "bharatham2020-903ae.appspot.com",
-      messagingSenderId: "46039964633"
+    var firebaseConfig = {
+      apiKey: "AIzaSyBNIdfUiS6XIr79DpvUHMlde6Z7Vi-ydnM",
+      authDomain: "bharatham2020-5015e.firebaseapp.com",
+      databaseURL: "https://bharatham2020-5015e.firebaseio.com",
+      projectId: "bharatham2020-5015e",
+      storageBucket: "bharatham2020-5015e.appspot.com",
+      messagingSenderId: "555267501145",
+      appId: "1:555267501145:web:295ce0078acc8254a69548",
+      measurementId: "G-33WPK3D8YC"
     };
-    firebase.initializeApp(config);
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
 
 
     $("#logout-button").click(function (event) {
@@ -194,14 +197,15 @@
       if (user) {
         uid = firebase.auth().currentUser.uid;
         email = firebase.auth().currentUser.email;
-        // console.log(uid);
+        console.log(uid);
         // console.log(email);
         // console.log('here2');
 
         firebase.database().ref().child('reg_captains').once("value", function (snapshot) {
           // console.log('here');
           var house = snapshot.child(uid).val();
-          // console.log(house);
+          console.log(house);
+      
           document.getElementById('house').value = house;
           document.getElementById('email').value = email;
         })
