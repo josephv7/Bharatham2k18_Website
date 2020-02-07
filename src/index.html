@@ -31,6 +31,10 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
   <!-- Add http://ogp.me/ tags when ready -->
   <style>
@@ -59,6 +63,10 @@
     /*
  * Base structure
  */
+    i:hover {
+      color: #D32F2F;
+      animation: 0.3s ease-in all;
+    }
 
     html,
     body {
@@ -148,6 +156,16 @@
       border-bottom-color: #fff;
     }
 
+    #bharatham-logo {
+      width: 100%;
+      min-height: 450px;
+    }
+
+    @media (max-width: 767px) {
+      #bharatham-logo
+      {min-height: 340px;}
+    }
+
     @media (min-width: 768px) {
       .masthead-brand {
         float: left;
@@ -158,9 +176,15 @@
       }
     }
 
-    h2 {
+    #title {
       font-family: 'Montserrat', sans-serif;
       font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
       text-transform: uppercase;
     }
 
@@ -221,6 +245,11 @@
       vertical-align: middle;
     }
 
+    #header {
+      color: #D32F2F;
+
+    }
+
     /* Handle the widths */
 
     /*.masthead,
@@ -262,7 +291,6 @@
 </head>
 
 <body>
-
   <div id="container" class="p-3">
     <div class="site-wrapper-inner">
       <div class="cover-container">
@@ -270,12 +298,11 @@
           <div class="inner">
             <nav>
               <ul class="nav masthead-nav">
-                <!-- <li>
-                  <a href="#">Events</a>
-                </li> -->
                 <li>
-                  <!-- <a href="login.html">Login</a> -->
-                  <!-- <img src="./image.jpg" alt="image"> -->
+                  <a href="#">Events</a>
+                </li>
+                <li>
+                  <a href="#">Scoreboard</a>
                 </li>
               </ul>
             </nav>
@@ -286,10 +313,13 @@
           <!-- <h1 class="cover-heading">Bharatham 2k18</h1> -->
           <div class="d-flex justify-content-center">
             <!-- <div class="cover-heading"> -->
-            <img src="./images/bhar_trans_white.png" alt="image" height="400px" width="400px">
+            <img src="./logo.png" alt="image" id="bharatham-logo">
+
             <!-- </div> -->
           </div>
-          <h2>February 15th &amp; 16th</h2>
+          <h1 id="title">Bharatham <span style="color: #D32F2F">2020</span></h1>
+          <h2 id="title" class="py-3">February <span style="font-weight: 400; color:#D32F2F;">15th &amp; 16th</span>
+          </h2>
           <p class="lead">
             <a href="https://www.instagram.com/bharatham2020/" target="_blank" rel="noopener noreferrer"><i
                 class="fab fa-instagram fa-2x logo_spacing"></i></a>
@@ -300,11 +330,32 @@
             <!-- <a href="#" class="btn btn-lg btn-default">Learn more</a> -->
           </p>
         </div>
+        <div class="container">
+
+          <h3> <span id="title" style="color:#D32F2F">Bharatham</span> Teaser</h3>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12 pt-2">
+              <video id="my-video" class="video-js vjs-fluid vjs-big-play-centered" controls preload="auto" width="640"
+                height="264" poster="./images/bhavam.png" data-setup="{}">
+                <source src="Sequence.mp4" type="video/mp4" />
+                <source src="MY_VIDEO.webm" type="video/webm" />
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a
+                  web browser that
+                  <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </video>
+
+
+            </div>
+          </div>
+
+        </div>
 
         <footer>
-          <div class="col-lg-12">
+          <div class="col-lg-12 pt-3">
             <div class="inner">
-              <p>Rajagiri School of Engineering &amp; Technology</p>
+              <p>Rajagiri School of Engineering &amp; Technology, Kakkanad</p>
             </div>
           </div>
         </footer>
@@ -314,12 +365,20 @@
     </div>
 
   </div>
+
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
     integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous">
+  </script>
+  <script>
+    var player = videojs('vid1', {
+      fluid: true
+    });
+
   </script>
 </body>
 
