@@ -1,385 +1,181 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-<meta content=#000000 name=theme-color>
-<meta content=#000000 name=msapplication-navbutton-color>
-<meta content=#000000 name=apple-mobile-web-app-status-bar-style>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./assets/fonts/Feather/feather.css">
+  <link rel="stylesheet" href="./assets/libs/flickity/dist/flickity.min.css">
+  <link rel="stylesheet" href="./assets/libs/flickity-fade/flickity-fade.css">
+  <link rel="stylesheet" href="./assets/libs/aos/dist/aos.css">
+  <link rel="stylesheet" href="./assets/libs/jarallax/dist/jarallax.css">
+  <link rel="stylesheet" href="./assets/libs/highlightjs/styles/vs2015.css">
+  <link rel="stylesheet" href="./assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="./assets/css/theme.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,900&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <meta name="keywords" content="bharatham, bharatham2020, RSET, TEDxRSET, NAAC, kochi, kakkanad">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
+  
+    <meta property="og:title" content="BHARATHAM 2020">
+    <meta property="og:site_name" content="BHARATHAM 2020 | FEB 13th, 14th & 15th 2020| RSET">
+    <meta property="og:url" content="https://www.bharatham2020.in">
+    <meta property="og:title" content="">
+    <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
+    <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
+  
+  
+    <meta name="author" content="roundmelonstudio">
+  
   <title>Bharatham 2020</title>
-  <meta name="keywords" content="bharatham, bharatham2020, RSET, TEDxRSET, NAAC, kochi, kakkanad">
-  <meta name="robots" content="index, follow">
-  <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
-
-  <meta property="og:title" content="BHARATHAM 2K19">
-  <meta property="og:site_name" content="BHARATHAM 2K19 | FEBRUARY 15, 16| RSET">
-  <meta property="og:url" content="https://www.bharatham2020.in">
-  <meta property="og:title" content="">
-  <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
-  <meta property="og:description"
-    content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-
-
-  <meta name="author" content="roundmelonstudio">
-
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
-
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-
-  <!-- Add http://ogp.me/ tags when ready -->
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:900');
-    /* Links */
-
-    a,
-    a:focus,
-    a:hover {
-      color: #fff;
-    }
-
-    /* Custom default button */
-
-    .btn-default,
-    .btn-default:hover,
-    .btn-default:focus {
-      color: #333;
-      text-shadow: none;
-      /* Prevent inheritance from `body` */
-      background-color: #fff;
-      border: 1px solid #fff;
-    }
-
-
-    /*
- * Base structure
- */
-    i:hover {
-      color: #D32F2F;
-      animation: 0.3s ease-in all;
-    }
-
-    html,
-    body {
-      height: 100vh;
-      background-color: black;
-      font-family: 'Play', sans-serif;
-      margin: 0;
-
-    }
-
-    .logo_spacing {
-      padding: 10px;
-    }
-
-    body {
-      color: #fff;
-      text-align: center;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-    }
-
-    #container {
+    #b-logo {
       height: 100%;
-      /* position: absolute; */
-      z-index: 1;
-    }
-
-    /* Extra markup and styles for table-esque vertical and horizontal centering */
-    /* 
-    .site-wrapper-inner {
-      vertical-align: top;
-    } */
-
-    .cover-container {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    /* Padding for spacing */
-
-    /* .inner {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    } */
-
-
-    /*
- * Header
- */
-
-    .masthead-brand {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .masthead-nav>li {
-      display: inline-block;
-    }
-
-    .masthead-nav>li+li {
-      margin-left: 20px;
-    }
-
-    .masthead-nav>li>a {
-      padding-right: 0;
-      padding-left: 0;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      /* IE8 proofing */
-      color: rgba(255, 255, 255, .75);
-      border-bottom: 2px solid transparent;
-    }
-
-    .masthead-nav>li>a:hover,
-    .masthead-nav>li>a:focus {
-      background-color: transparent;
-      border-bottom-color: #a9a9a9;
-      border-bottom-color: rgba(255, 255, 255, .25);
-    }
-
-    .masthead-nav>.active>a,
-    .masthead-nav>.active>a:hover,
-    .masthead-nav>.active>a:focus {
-      color: #fff;
-      border-bottom-color: #fff;
-    }
-
-    #bharatham-logo {
       width: 100%;
-      min-height: 450px;
-    }
-
-    @media (max-width: 767px) {
-      #bharatham-logo
-      {min-height: 340px;}
-    }
-
-    @media (min-width: 768px) {
-      .masthead-brand {
-        float: left;
-      }
-
-      .masthead-nav {
-        float: right;
-      }
-    }
-
-    #title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-
-    /*
- * Cover
- */
-    /* 
-    .cover {
-      padding: 0 20px;
-    } */
-
-    .cover .btn-lg {
-      padding: 10px 20px;
-      font-weight: bold;
-    }
-
-    .cover-heading {
-      font-family: 'Titillium Web', sans-serif;
-      font-size: 7rem;
-    }
-
-    .cus_font {
-      font-family: 'Titillium Web', sans-serif;
-      font-size: 2.5rem;
-    }
-
-
-    /*
- * Footer
- */
-
-    .mastfoot {
-      color: #999;
-      /* IE8 proofing */
-      color: rgba(255, 255, 255, .5);
-    }
-
-
-    /*
- * Affix and center
- */
-
-    /* Pull out the header and footer */
-
-    .masthead {
-      position: fixed;
-      top: 3em;
-    }
-
-    .mastfoot {
-      position: fixed;
-      bottom: 2em;
-    }
-
-    /* Start the vertical centering */
-
-    .site-wrapper-inner {
-      vertical-align: middle;
-    }
-
-    #header {
-      color: #D32F2F;
-
-    }
-
-    /* Handle the widths */
-
-    /*.masthead,
-    .mastfoot,
-     .cover-container {
-      width: 100%;
-      /* Must be percentage or pixels for horizontal alignment 
-    } */
-
-
-    @media (min-width: 992px) {
-
-      .masthead,
-      .mastfoot,
-      .cover-container {
-        width: 700px;
-      }
     }
 
   </style>
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-124518309-3');
-
-  </script>
-
-
-
 </head>
 
-<body>
-  <div id="container" class="p-3">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
-        <div class="masthead clearfix">
-          <div class="inner">
-            <nav>
-              <ul class="nav masthead-nav">
-                <li>
-                  <a href="#">Events</a>
-                </li>
-                <li>
-                  <a href="#">Scoreboard</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+<body style="background-color: black;">
 
-        <div class="inner cover" style="z-index: 10;">
-          <!-- <h1 class="cover-heading">Bharatham 2k18</h1> -->
-          <div class="d-flex justify-content-center">
-            <!-- <div class="cover-heading"> -->
-            <img src="./logo.png" alt="image" id="bharatham-logo">
-
-            <!-- </div> -->
-          </div>
-          <h1 id="title">Bharatham <span style="color: #D32F2F">2020</span></h1>
-          <h2 id="title" class="py-3">February <span style="font-weight: 400; color:#D32F2F;">15th &amp; 16th</span>
-          </h2>
-          <p class="lead">
-            <a href="https://www.instagram.com/bharatham2020/" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-instagram fa-2x logo_spacing"></i></a>
-            <!-- <a href="http://fb.com/bharatham2k18" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-facebook fa-2x logo_spacing"></i></a> -->
-            <a href="https://play.google.com/store/apps/details?id=com.roundmelon.iamjosephvarghese.bharatham_2k18"
-              target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play fa-2x logo_spacing"></i></a>
-            <!-- <a href="#" class="btn btn-lg btn-default">Learn more</a> -->
-          </p>
-        </div>
-        <div class="container">
-
-          <h3> <span id="title" style="color:#D32F2F">Bharatham</span> Teaser</h3>
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-12 pt-2">
-              <video id="my-video" class="video-js vjs-fluid vjs-big-play-centered" controls preload="auto" width="640"
-                height="264" poster="./images/bhavam.png" data-setup="{}">
-                <source src="Sequence.mp4" type="video/mp4" />
-                <source src="MY_VIDEO.webm" type="video/webm" />
-                <p class="vjs-no-js">
-                  To view this video please enable JavaScript, and consider upgrading to a
-                  web browser that
-                  <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                </p>
-              </video>
+  <section class="mt-n10">
+    <div class="container d-flex flex-column">
+      <div class="row align-items-center justify-content-center min-vh-100 py-8 py-md-11">
+        <div class="col-12 col-md-12 col-lg-12 text-center">
 
 
-            </div>
-          </div>
+          <img src="./logo.png" id="b-logo">
 
         </div>
+        <div class="col-12 col-md-12 col-lg-12 text-center">
 
-        <footer>
-          <div class="col-lg-12 pt-3">
-            <div class="inner">
-              <p>Rajagiri School of Engineering &amp; Technology, Kakkanad</p>
-            </div>
-          </div>
-        </footer>
 
+          <h1 class="display-3 mb-0 text-white" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
+            <span style="font-family: 'Montserrat', sans-serif; font-weight: 300; color: #D32F2F">BHARATHAM</span>
+          </h1>
+          <h5 class=" display-4 mb-0 text-white" style="font-family: 'Montserrat', sans-serif; font-weight: 300;">
+            Feb <span style="font-family: 'Montserrat', sans-serif; font-weight: 300; color: #D32F2F">13th, 14th & 15th,
+              2020</span>
+          </h5>
+
+
+        </div>
+        <div class="col-12 mt-auto text-center">
+
+
+          <a class="btn btn-danger btn-rounded-circle shadow" data-toggle="smooth-scroll" data-offset="0"
+            href="#sectionTwo">
+            <i class="fe fe-arrow-down"></i>
+          </a>
+
+        </div>
       </div>
-
     </div>
+  </section>
 
+
+  <a class="d-block text-decoration-none" id="sectionTwo" data-jarallax data-speed=".8"
+    style="background-image: url(assets/img/bhavam.jpg)">
+    <div class="container d-flex flex-column">
+      <div class="row align-items-center min-vh-100 py-8 py-md-11">
+        <div class="col-12">
+          <h1 class="mb-0 text-center text-uppercase text-white letter-spacing-lg dispaly-1"
+            style="font-family: 'Montserrat', sans-serif; font-weight: 900;">
+            BHA<span class="text-danger">VAM</span>
+          </h1>
+
+        </div>
+      </div>
+    </div>
+  </a>
+
+
+  <a class="d-block text-decoration-none" id="sectionTwo" data-jarallax data-speed=".8"
+    style="background-image: url(assets/img/ragam.jpg)">
+    <div class="container d-flex flex-column">
+      <div class="row align-items-center min-vh-100 py-8 py-md-11">
+        <div class="col-12">
+          <h1 class="mb-0 text-center text-uppercase text-white letter-spacing-lg dispaly-1"
+            style="font-family: 'Montserrat', sans-serif; font-weight: 900;">
+            RA<span class="text-danger">GAM</span>
+          </h1>
+
+        </div>
+      </div>
+    </div>
+  </a>
+
+
+  <a class="d-block text-decoration-none" id="sectionTwo" data-jarallax data-speed=".8"
+    style="background-image: url(assets/img/thalam.jpg)">
+    <div class="container d-flex flex-column">
+      <div class="row align-items-center min-vh-100 py-8 py-md-11">
+        <div class="col-12">
+          <h1 class="mb-0 text-center text-uppercase text-white letter-spacing-lg dispaly-1"
+            style="font-family: 'Montserrat', sans-serif; font-weight: 900;">
+            THA<span class="text-danger">LAM</span>
+          </h1>
+
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="black" />
+      </svg>
+    </div>
   </div>
+  <footer class="py-8 py-md-11 bg-red">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12 text-center">
 
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
-    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous">
-  </script>
-  <script>
-    var player = videojs('vid1', {
-      fluid: true
-    });
+          <p class="text-gray-700">
+            Rajagiri School of Engineering & Technology, Kakkanad
+          </p>
 
-  </script>
+          <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+            <li class="list-inline-item list-social-item mr-3">
+              <a href="https://www.instagram.com/bharatham2020" class="text-decoration-none">
+                <!-- <img src="./assets/img/icons/social/instagram.svg" class="list-social-icon" alt="..."> -->
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item mr-3">
+              <a href="#!" class="text-decoration-none">
+                <img src="./assets/img/buttons/button-play.png" class="list-social-icon" alt="...">
+                <!-- <i class="fab fa-google-play" style="background-color:white;"></i> -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </footer>
+  <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/libs/flickity/dist/flickity.pkgd.min.js"></script>
+  <script src="./assets/libs/flickity-fade/flickity-fade.js"></script>
+  <script src="./assets/libs/aos/dist/aos.js"></script>
+  <script src="./assets/libs/smooth-scroll/dist/smooth-scroll.min.js"></script>
+  <script src="./assets/libs/jarallax/dist/jarallax.min.js"></script>
+  <script src="./assets/libs/jarallax/dist/jarallax-video.min.js"></script>
+  <script src="./assets/libs/jarallax/dist/jarallax-element.min.js"></script>
+  <script src="./assets/libs/typed.js/lib/typed.min.js"></script>
+  <script src="./assets/libs/countup.js/dist/countUp.min.js"></script>
+  <script src="./assets/libs/highlightjs/highlight.pack.min.js"></script>
+  <script src="./assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+  <script src="./assets/libs/isotope-layout/dist/isotope.pkgd.min.js"></script>
+  <script src="./assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="./assets/js/theme.min.js"></script>
+
+
 </body>
 
 </html>
