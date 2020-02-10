@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-cli --mode=production --env=prod",
+    "build": "webpack-cli --mode=production --env=prod && ncp assets/ dist/assets",
     "start": "webpack-dev-server --mode=development --env=dev"
   },
   "husky": {
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "ncp": "^2.0.0",
     "sketch-js": "^1.1.3"
   }
 }

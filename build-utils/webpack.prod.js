@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-workboxPlugin = require('workbox-webpack-plugin');
+workboxPlugin = require("workbox-webpack-plugin");
 const path = require("path");
 const commonPaths = require("./common-paths");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -14,11 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       },
       {
         test: /.js$/,
@@ -26,15 +22,15 @@ module.exports = {
           loader: "babel-loader"
         },
         exclude: /(node_modules|dist|build-utils|webpack.config.js)/
-      },
-    ],
+      }
+    ]
   },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
+        sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
@@ -57,13 +53,6 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true,
       swDest: path.join(commonPaths.outputPath, "sw.js")
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: commonPaths.public,
-        to: commonPaths.outputPath,
-        ignore: ["index.html"]
-      }
-    ])
+    })
   ]
 };
