@@ -1,10 +1,9 @@
 # Bharatham 2k18
 
-Official Website of Bharatham2k18. Annual arts fest held at Rajagiri School Of Engineering & Technology.    
-[Visit Website](https://bharatham2k18.in)    
-Registrations for all the events were done through this website, using Google Apps Script and Google Sheets.     
+Official Website of Bharatham2k18. Annual arts fest held at Rajagiri School Of Engineering & Technology.  
+[Visit Website](https://bharatham2k18.in)  
+Registrations for all the events were done through this website, using Google Apps Script and Google Sheets.  
 Hosted on Firebase.
-
 
 Uses Webpack 4, Babel 7
 
@@ -34,9 +33,7 @@ You can replace these with their `yarn` counterparts, if you prefer.
 - [Babel](https://babeljs.io/)
 
   Convert your javascript files to fit all browsers.
-  
+
 - [Firebase](https://firebase.google.com)
 
 - [Google Apps Script](https://developers.google.com/apps-script/)
-
-
