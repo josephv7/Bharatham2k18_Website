@@ -1,0 +1,81 @@
+body {
+  font: normal 18px/1.5 Fira Sans, Helvetica Neue, sans-serif;
+  background: #000;
+  color: #fff;
+  padding: 50px 0;
+}
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container * {
+  box-sizing: border-box;
+}
+.flex-inner,
+.flex-outer {
+  list-style-type: none;
+  padding: 0;
+}
+.flex-outer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.flex-inner,
+.flex-outer li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;
+}
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+.flex-outer li label,
+.flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+.flex-inner,
+.flex-outer > li > label + * {
+  flex: 1 0 220px;
+}
+.flex-outer li p {
+  margin: 0;
+}
+.flex-outer li input:not([type="checkbox"]),
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+@media (max-width: 480px) {
+  .flex-outer li button {
+    width: 100%;
+  }
+}
+.flex-inner li {
+  width: 100px;
+}
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 2em;
+}
+input:focus,
+textarea:focus {
+  outline: 0.5px solid #e62b1e;
+  box-shadow: 0 0 10px #e62b1e;
+}
