@@ -3,61 +3,67 @@
 <meta content=#000000 name=theme-color>
 <meta content=#000000 name=msapplication-navbutton-color>
 <meta content=#000000 name=apple-mobile-web-app-status-bar-style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="UTF-8">
-    <title>Live Scores</title>
-    <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
-    <meta property="og:title" content="BHARATHAM 2K18">
-    <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
-    <meta property="og:url" content="https://www.bharatham2k18.in">
-    <meta property="og:title" content="">
-    <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
-    <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-    <meta property="og:title" content="BHARATHAM 2K18">
-    <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
-    <meta property="og:url" content="https://www.bharatham2k18.in">
-    <meta property="og:title" content="">
-    <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
-    <meta property="og:description" content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Live Scores</title>
+  <meta name="keywords" content="bharatham, bharatham2k18, RSET, TEDxRSET, NAAC, FISAT, kochi, kakkanad">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/ico" href="https://www.rajagiritech.ac.in/Home/images/favicon.ico">
+  <meta property="og:title" content="BHARATHAM 2K18">
+  <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+  <meta property="og:url" content="https://www.bharatham2k18.in">
+  <meta property="og:title" content="">
+  <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
+  <meta property="og:description"
+    content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
+  <meta property="og:title" content="BHARATHAM 2K18">
+  <meta property="og:site_name" content="BHARATHAM 2K18 | NOVEMBER 8,9,10| RSET">
+  <meta property="og:url" content="https://www.bharatham2k18.in">
+  <meta property="og:title" content="">
+  <!-- <meta property="og:image" content="https://www.rajagiritech.ac.in/Home/saavishkar2018/images/logos/Saav_logo.png"> -->
+  <meta property="og:description"
+    content="Bharatham, the two-day intra-college arts festival is a true amalgamation of bhavam, raagam and thaalam.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124518309-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-124518309-3');
-    </script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-    <style>
-        body{
-            background: white;
-        }
-    </style>
+    gtag('config', 'UA-124518309-3');
+
+  </script>
+
+  <style>
+    body {
+      background: white;
+    }
+
+  </style>
 
 
 </head>
 
 <body>
-<center>
+  <center>
     <div id="barchart_values" style="width: 100vh; height: 100vh;"></div>
-</center>
+  </center>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-        var app = undefined
-
-        var config = {
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    var app = undefined
+    var firebaseConfig = {
       apiKey: "AIzaSyBNIdfUiS6XIr79DpvUHMlde6Z7Vi-ydnM",
       authDomain: "bharatham2020-5015e.firebaseapp.com",
       databaseURL: "https://bharatham2020-5015e.firebaseio.com",
@@ -68,45 +74,56 @@
       measurementId: "G-33WPK3D8YC"
     };
     // Initialize Firebase
-    firebase.initializeApp(config);
+    app = firebase.initializeApp(firebaseConfig);
     // firebase.analytics();
-        if (app) {
-            firebase.database().ref().child('Score').child('House').on("value", function (snapshot) {
-                google.charts.load("current", { packages: ["corechart"] });
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                        ["House", "Points", { role: "style" }],
-                        ["Aghoras", + snapshot.val().aghoras, "color: #7c3e92"],
-                        ["Aryans", + snapshot.val().aryans, "color: #fbbd0a"],
-                        ["Mughals", + snapshot.val().mughals, "#color: #dd3333"],
-                        ["Rajputs", + snapshot.val().rajputs, "color: #fd6a04"],
-                        ["Spartans", + snapshot.val().spartans, "color: #ed48b7"],
-                        ["Vikings", + snapshot.val().vikings, "color: #022b7b"]
-                    ]);
-                    var view = new google.visualization.DataView(data);
-                    view.setColumns([0, 1,
-                        {
-                            calc: "stringify",
-                            sourceColumn: 1,
-                            type: "string",
-                            role: "annotation"
-                        },
-                        2]);
+    if (app) {
+      firebase.database().ref().child('Score').child('House').on("value", function (snapshot) {
+        google.charts.load("current", {
+          packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-                    var options = {
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["House", "Points", {
+              role: "style"
+            }],
+            ["Aghoras", +snapshot.val().aghoras, "color: #7c3e92"],
+            ["Aryans", +snapshot.val().aryans, "color: #fbbd0a"],
+            ["Mughals", +snapshot.val().mughals, "#color: #dd3333"],
+            ["Rajputs", +snapshot.val().rajputs, "color: #fd6a04"],
+            ["Spartans", +snapshot.val().spartans, "color: #ed48b7"],
+            ["Vikings", +snapshot.val().vikings, "color: #022b7b"]
+          ]);
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+            {
+              calc: "stringify",
+              sourceColumn: 1,
+              type: "string",
+              role: "annotation"
+            },
+            2
+          ]);
 
-                        width: 1000,
-                        height: 1000,
-                        bar: { groupWidth: "95%" },
-                        legend: { position: "none" },
-                    };
-                    var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-                    chart.draw(view, options);
-                }
-            })
+          var options = {
+
+            width: 1000,
+            height: 1000,
+            bar: {
+              groupWidth: "95%"
+            },
+            legend: {
+              position: "none"
+            },
+          };
+          var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+          chart.draw(view, options);
         }
-    </script>
+      })
+    }
+
+  </script>
 
 </body>
 
