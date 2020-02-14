@@ -146,46 +146,46 @@
       <td class="innerContainer">
         <br>
         <br>
-        <span class="score" id="aghoras">0</span>
+        <span class="score" id="aghoras"></span>
       </td>
 
       <td class="innerContainer">
         <br>
         <br>
-        <span class="score" id="aryans">25</span>
-      </td>
-
-
-      <td class="innerContainer">
-        <br>
-        <br>
-        <span class="score" id="mughals">8</span>
+        <span class="score" id="aryans"></span>
       </td>
 
 
       <td class="innerContainer">
         <br>
         <br>
-        <span class="score" id="rajputs">24</span>
+        <span class="score" id="mughals"></span>
       </td>
 
 
       <td class="innerContainer">
         <br>
         <br>
-        <span class="score" id="spartans">28</span>
+        <span class="score" id="rajputs"></span>
+      </td>
+
+
+      <td class="innerContainer">
+        <br>
+        <br>
+        <span class="score" id="spartans"></span>
       </td>
 
       <td class="innerContainer">
         <br>
         <br>
-        <span class="score" id="vikings">24</span>
+        <span class="score" id="vikings"></span>
       </td>
 
     </tr>
 
   </table>
-<!-- 
+
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-database.js"></script>
@@ -196,7 +196,7 @@
       aryans = 0,
       vikings = 0,
       aghoras = 0;
-    var config = {
+    var firebaseConfig = {
       apiKey: "AIzaSyBNIdfUiS6XIr79DpvUHMlde6Z7Vi-ydnM",
       authDomain: "bharatham2020-5015e.firebaseapp.com",
       databaseURL: "https://bharatham2020-5015e.firebaseio.com",
@@ -208,7 +208,7 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    // firebase.analytics();
     var database = firebase.database();
 
     URLRef = database.ref().child('Score').child('House').child('spartans');
@@ -247,7 +247,7 @@
       document.getElementById('aghoras').innerHTML = snapshot.val();
     });
 
-  </script> -->
+  </script>
 </body>
 
 </html>

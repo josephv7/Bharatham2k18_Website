@@ -56,15 +56,20 @@
     <script type="text/javascript">
 
         var app = undefined
+
         var config = {
-            apiKey: "AIzaSyDGk80A4ORHww9y7mGFgLS2YBXIZISA-ZQ",
-            authDomain: "bharatham2k18-903ae.firebaseapp.com",
-            databaseURL: "https://bharatham2k18-903ae.firebaseio.com",
-            projectId: "bharatham2k18-903ae",
-            storageBucket: "bharatham2k18-903ae.appspot.com",
-            messagingSenderId: "46039964633"
-        };
-        app = firebase.initializeApp(config);
+      apiKey: "AIzaSyBNIdfUiS6XIr79DpvUHMlde6Z7Vi-ydnM",
+      authDomain: "bharatham2020-5015e.firebaseapp.com",
+      databaseURL: "https://bharatham2020-5015e.firebaseio.com",
+      projectId: "bharatham2020-5015e",
+      storageBucket: "bharatham2020-5015e.appspot.com",
+      messagingSenderId: "555267501145",
+      appId: "1:555267501145:web:295ce0078acc8254a69548",
+      measurementId: "G-33WPK3D8YC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(config);
+    // firebase.analytics();
         if (app) {
             firebase.database().ref().child('Score').child('House').on("value", function (snapshot) {
                 google.charts.load("current", { packages: ["corechart"] });
